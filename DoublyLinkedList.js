@@ -134,4 +134,27 @@ class DoublyLinkedList {
         }
         return false;
     }
+    // insert - add node at a specific position
+     // if index < 0 or > length, return false
+     // if index = length, insert at end using push
+     // if index = 0, insert at begining using unshift
+     // else use get to access node at index - 1
+     // set next and prev on that node to be new node
+     // set next and prev on new node to be replaced node
+     // increment length
+     // return true
+     insert(index, val) {
+        if(index < 0 || index > this.length) return false;
+        if(index === this.length) return !!this.push(val); // push return string, using !! change to bool
+        if(index === 0) return !!this.unshift(val); // unshift return string, using !! change to bool
+        var newNode = new Node(val);
+        var prevNode = this.get(index - 1);
+        var nextNode = prevNode.next;
+        prevNode.next = newNode;
+        newNode.prev = prevNode;
+        newNode.next = nextNode;
+        nextNode.prev = newNode;
+        this.length++;
+        return true;
+    }
 }
