@@ -84,4 +84,18 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
+     // get - find item by index
+     // accept index
+     // if index is less than 0 or greater than or equal to length return undefined
+     // traverse next until you reach the index and retun node at specific index
+     get(index) {
+        if(index < 0 || index >=this.length) return undefined;
+        var counter = 0;
+        var current = this.head;
+        while(counter !== index) {
+            current = current.next;
+            counter++;
+        }
+        return current;
+    }
 }
