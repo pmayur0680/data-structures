@@ -127,9 +127,27 @@ class SinglyLinkedList {
         var newNode = new Node(val);
         var prev = this.get(index - 1);
         var temp = prev.next;
-        prev.next - newNode;
+        prev.next = newNode;
         newNode.next = temp;
         this.length++;
         return true;
+    }
+    // remove - remove node at a specific position
+    // if index < 0 or > length, return false
+     // if index = length - 1, remove using pop
+     // if index = 0, remove using shift
+     // else use get to access node at index - 1
+     // set next on that node to be next of next node being next is removed     
+     // decrement length
+     // return true
+     remove(index) {
+        if(index < 0 || index > this.length) return false;
+        if(index === this.length - 1) return !!this.pop();
+        if(index === 0) return this.shift();        
+        var prev = this.get(index - 1);
+        var removed = prev.next;
+        prev.next = removed.next;        
+        this.length--;
+        return removed;
     }
 }
