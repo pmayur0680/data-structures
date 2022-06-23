@@ -95,4 +95,30 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+    // get - find item by index
+     // accept index
+     // if index is less than 0 or greater than or equal to length return undefined
+     // if index is less than or equal to half the length of the list
+        // loop through the list starting from head towards middle and return node once it found
+     // elseif index is greater than or equal to half the length of the list
+        // loop through the list starting from tail towards middle and return node once it found    
+     get(index) {
+        if(index < 0 || index >= this.length) return undefined;
+        if(index <= this.length/2) {
+            var counter = 0;
+            var current = this.head;
+            while(counter !== index) {
+                current = current.next;
+                counter++;
+            }
+        } else {
+            var counter = this.length - 1;
+            var current = this.tail;
+            while(counter !== index) {
+                current = current.prev;
+                counter--;
+            }
+        }
+        return current;
+    }
 }
