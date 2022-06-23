@@ -75,4 +75,24 @@ class DoublyLinkedList {
         this.length--;        
         return oldHead;       
     }
+    // adding a node to the beginning of list
+    // create a new node with value passed in
+    // if not head, set head and tail to newnode
+    // else set prev on head = newnode
+    // set next on newnode = head
+    // set new head = newnode
+    // increment length, return this
+    unshift(val) {
+        var newNode = new Node(val);
+        if(!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {     
+        this.head.prev = newNode;       
+        newNode.next = this.head;
+        this.head = newNode;        
+        }
+        this.length++;
+        return this;
+    }
 }
