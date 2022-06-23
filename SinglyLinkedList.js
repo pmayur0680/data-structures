@@ -150,4 +150,42 @@ class SinglyLinkedList {
         this.length--;
         return removed;
     }
+    // reverse - reversing the linked list in place
+     // swap the head and tail
+     // create a variable called next
+     // create a variable called prev
+     // create a variable called node and initialize it to the head
+     // loop through the list
+     // set next to be the next on whatever node is
+     // set prev to be the value of node
+     // set node to be the value of next
+     // return true
+     // 13 -> 27 -> 32 -> 71 to 71 -> 32 -> 27 -> 13
+     reverse() {
+        // swap (head = 13, tail = 71 to tail = 13, head = 71)
+        var node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        var next;
+        var prev = null;
+        // iterate
+        for (let i = 0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
+     }
+     // helper to see action in array
+     print() {
+        var arr = [];
+        var current = this.head;
+        while(current) {
+            arr.push(current.val);
+            current = current.next;
+        }
+        console.log(arr);
+     }
+   
 }
