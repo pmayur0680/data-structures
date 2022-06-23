@@ -14,3 +14,21 @@ Linked List is a linear data structure consists of nodes where each node contain
 In Singly Linked List, each node contains data field (value) and a reference (link/pointer) to the next node in the list.
 
 In Doubly Linked List, each node contains data field (value) and a reference (link/pointer) to the next and previous node in the list.
+
+Doubly Linked List are better than Singly for finding nodes and can be done in half time. However, they do take up more memory considering extra pointer.
+
+## Stack
+
+Stack is an abstract (behavior is defined by principles) data structure that abides by a LIFO principle (push & pop or unshift & shift). Mainly use in managing function invocations. It can be implemented using push & pop meaning adding to end and removing from end OR unshift and shift meaning adding to beginning and removing from beginning).
+
+### LIFO
+
+element inserted at the last, is the first element to come out of the list.
+
+## Queue
+
+Stack is an abstract (behavior is defined by principles) data structure that abide by a FIFO principle (shift to remove first, push to insert last).
+
+### FIFO
+
+element inserted at the first, is the first element to come out of the list.

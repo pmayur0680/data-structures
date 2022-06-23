@@ -104,16 +104,17 @@ class DoublyLinkedList {
         // loop through the list starting from tail towards middle and return node once it found    
      get(index) {
         if(index < 0 || index >= this.length) return undefined;
+        var counter, current;
         if(index <= this.length/2) {
-            var counter = 0;
-            var current = this.head;
+            counter = 0;
+            current = this.head;
             while(counter !== index) {
                 current = current.next;
                 counter++;
             }
         } else {
-            var counter = this.length - 1;
-            var current = this.tail;
+            counter = this.length - 1;
+            current = this.tail;
             while(counter !== index) {
                 current = current.prev;
                 counter--;
@@ -169,6 +170,7 @@ class DoublyLinkedList {
         if(index < 0 || index > this.length) return false;
         if(index === this.length - 1) return !!this.pop();
         if(index === 0) return this.shift();        
+        var removedNode = this.get(index);
         removedNode.prev.next = removedNode.next;
         removed.next.prev = removed.prev;       
         removed.next = null;
@@ -176,4 +178,30 @@ class DoublyLinkedList {
         this.length--;
         return removed;
     }
+   // reverse - reversing the linked list in place
+    // swap the head and tail
+     // create a variable called next
+     // create a variable called prev
+     // create a variable called node and initialize it to the head
+     // loop through the list
+     // set next to be the next on whatever node is
+     // set prev to be the value of node
+     // set node to be the value of next
+     // return true
+   reverse() {
+    var node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    var next;
+    var prev = null;
+    // iterate
+    for (let i = 0; i < this.length; i++) {
+        next = node.next;
+        node.next = prev;
+        prev = node;
+        node = next;
+    }
+    return this;
+ }
+
 }
