@@ -30,4 +30,27 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
+    // pop to end - remove tail
+    // if no head, return undefined
+    // traverse to find tail, keep record of node before tail to set as new tail    
+    // set tail = newtail, length-- and return pop node
+    // if length = 0, set head and tail to null
+    pop() {
+        if(!this.head) return undefined;
+        var current = this.head;
+        var newTail = current;
+        while(current.next) {
+            // keep tail one behind current (pop)
+            newTail = current;
+            current = current.next;
+        }
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length--;
+        if(this.length === 0) {
+            this.head = null;
+            this.tail = null;
+        }
+        return current;
+    }
 }
