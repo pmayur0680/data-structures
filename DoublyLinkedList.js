@@ -41,16 +41,38 @@ class DoublyLinkedList {
     // decrement length, return this
     pop() {
         if(!this.head) return undefined;        
-        var poppedNode = this.tail;
+        var oldTail = this.tail;
         if(this.length === 1) {
             this.head = null;
             this.tail = null;
         } else {
-            this.tail = poppedNode.prev;
+            this.tail = oldTail.prev;
             this.tail.next = null;     
-            poppedNode.prev = null;       
+            oldTail.prev = null;       
         }
         this.length--;        
-        return poppedNode;
+        return oldTail;
     }    
+    // removing node from beginning
+    // if no head, return undefined
+    // store current head in variable
+    // if length = 1, set head, tail to null
+    // else set head = head.next
+    // set head prev to null
+    // set old head next to null
+    // decrement length, return oldhead  
+    shift() {
+        if(!this.head) return undefined;
+        var oldHead = this.head;
+        if(this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = oldHead.next;
+            this.head.prev = null;     
+            oldHead.next = null;       
+        }
+        this.length--;        
+        return oldHead;       
+    }
 }

@@ -58,6 +58,7 @@ class SinglyLinkedList {
     // set head = head.next
     // length-- and return removed node (original head)
     // if length = 0, set tail to null
+    // decrement length, return oldhead
      shift() {
         if(!this.head) return undefined;
         var currentHead = this.head;
