@@ -48,4 +48,28 @@ class BinarySearchTree {
         }
 
     }
+     // Finding a node    
+    // if not root, return null
+    // else if value of new node > root, check to see if there is a node to right
+            // if there is, move to that node and repeat steps
+            // if not, add that node as the right
+    // else if value of new node < root, check to see if there is a node to left
+            // if there is, move to that node and repeat steps
+            // if not, add that node as the left    
+    find(value) {
+        if(this.root === null) return false;
+        var current = this.root;
+        var found = false;
+        while(current && !found) {
+            if(value < current.value) {                
+                current = current.left;                
+            } else if(value > current.value) {                
+                current = current.right;                    
+            } else {
+                return true;
+            }
+            }false
+            return current;
+        }
+  
 }

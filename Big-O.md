@@ -25,3 +25,8 @@
 - Removal O(1)
 - Searching O(N)
 - Access O(N)
+
+## BST
+
+- Insertion O(log n)
+- Searching O(log n)
