@@ -64,7 +64,24 @@ class SinglyLinkedList {
         this.head = this.head.next;
         this.length--;
         if(this.length === 0) this.tail = null;
-        return currentHead;
-        
+        return currentHead;        
+    }
+     // unshift - insert new to beginning (head)
+     // create a new node with value passed in
+    // if not head, set head and tail to newnode
+    // else set newnode next = head
+    // set new head = newnode
+    // increment length, return this
+     unshift(val) {
+        var newNode = new Node(val);
+        if(!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {        
+        newNode.next = this.head;
+        this.head = newNode;        
+        }
+        this.length++;
+        return this;
     }
 }
