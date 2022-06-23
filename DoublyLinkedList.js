@@ -157,4 +157,23 @@ class DoublyLinkedList {
         this.length++;
         return true;
     }
+     // remove - remove node at a specific position
+    // if index < 0 or > length, return false
+     // if index = length - 1, remove using pop
+     // if index = 0, remove using shift
+     // else use get to access node at index - 1
+     // set next and prev on that node to be next of next node being next is removed     
+     // decrement length
+     // return true
+     remove(index) {
+        if(index < 0 || index > this.length) return false;
+        if(index === this.length - 1) return !!this.pop();
+        if(index === 0) return this.shift();        
+        removedNode.prev.next = removedNode.next;
+        removed.next.prev = removed.prev;       
+        removed.next = null;
+        removed.prev = null;
+        this.length--;
+        return removed;
+    }
 }
