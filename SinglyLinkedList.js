@@ -111,4 +111,25 @@ class SinglyLinkedList {
         }
         return false;
     }
+    // insert - add node at a specific position
+     // if index < 0 or > length, return false
+     // if index = length, insert at end using push
+     // if index = 0, insert at begining using unshift
+     // else use get to access node at index - 1
+     // set next on that node to be new node
+     // set next on new node to be replaced node
+     // increment length
+     // return true
+    insert(index, val) {
+        if(index < 0 || index > this.length) return false;
+        if(index === this.length) return !!this.push(val); // push return string, using !! change to bool
+        if(index === 0) return !!this.unshift(val); // unshift return string, using !! change to bool
+        var newNode = new Node(val);
+        var prev = this.get(index - 1);
+        var temp = prev.next;
+        prev.next - newNode;
+        newNode.next = temp;
+        this.length++;
+        return true;
+    }
 }
