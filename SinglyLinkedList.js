@@ -98,4 +98,17 @@ class SinglyLinkedList {
         }
         return current;
     }
+     // set (update) value at existing index
+     // accept index and new value
+     // use get function to find node at index
+     // if node is not found, return false
+     // if node is found, set new value and return true
+     set(index, val) {
+        var foundNode = this.get(index);
+        if(foundNode) {
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+    }
 }
