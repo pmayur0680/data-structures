@@ -30,7 +30,7 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
-    // pop to end - remove tail
+    // pop remove from end - remove tail
     // if no head, return undefined
     // traverse to find tail, keep record of node before tail to set as new tail    
     // set tail = newtail, length-- and return pop node

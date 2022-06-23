@@ -32,4 +32,25 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+    // removing node from end
+    // if no head, return undefined
+    // store the current tail in variable
+    // if length is 1, set head and tail to null
+    // update tail to be the previous node
+    // set new tail next to null
+    // decrement length, return this
+    pop() {
+        if(!this.head) return undefined;        
+        var poppedNode = this.tail;
+        if(this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.tail = poppedNode.prev;
+            this.tail.next = null;     
+            poppedNode.prev = null;       
+        }
+        this.length--;        
+        return poppedNode;
+    }    
 }
