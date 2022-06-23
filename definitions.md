@@ -34,3 +34,22 @@ enqueue is a queue operation where you add an item at the back of a queue. deque
 ### FIFO
 
 element inserted at the first, is the first element to come out of the list.
+
+## Trees
+
+Tree is a nonlinear data structure consisting of nodes in a parent/child relationship.
+
+- Root is a top node in a tree.
+- Child is a node directory connected to another node when moving away from the Root.
+- Parent - The converse notion of a child.
+- Siblings - A group of nodes with the same parent.
+- Leaf - A node with no children.
+- Edge - The connection between one node and another.
+
+Example: HTML DOM, Network Routing, Abstract Syntax Tree, Artificial Inteligence, Files & Directory Structure
+
+### Types of Trees
+
+- Trees: Each node can have any number of child nodes.
+- Binary Trees: Each node can have at most two child nodes.
+- Binary Search Trees (BST): Each parent node can have at most two children. Every node to the left of a parent is always less than the parent. Every node to the right of a parent is always greater than the parent.
