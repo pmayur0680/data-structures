@@ -53,4 +53,18 @@ class SinglyLinkedList {
         }
         return current;
     }
+     // shift - remove new node from beginning (head)
+    // if no head, return undefined
+    // set head = head.next
+    // length-- and return removed node (original head)
+    // if length = 0, set tail to null
+     shift() {
+        if(!this.head) return undefined;
+        var currentHead = this.head;
+        this.head = this.head.next;
+        this.length--;
+        if(this.length === 0) this.tail = null;
+        return currentHead;
+        
+    }
 }
