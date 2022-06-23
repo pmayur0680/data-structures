@@ -27,7 +27,9 @@ element inserted at the last, is the first element to come out of the list.
 
 ## Queue
 
-Stack is an abstract (behavior is defined by principles) data structure that abide by a FIFO principle (shift to remove first, push to insert last).
+Stack is an abstract (behavior is defined by principles) data structure that abide by a FIFO principle. It can be implemented using push & shift meaning adding to end and removing from beginning.
+
+enqueue is a queue operation where you add an item at the back of a queue. dequeue is a queue operation where you remove an item from the front of a queue
 
 ### FIFO
 
