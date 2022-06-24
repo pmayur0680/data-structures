@@ -1,4 +1,4 @@
-class MaxBinaryHeap {
+class MinBinaryHeap {
     constructor() {
         this.values = [];
     }
@@ -20,7 +20,7 @@ class MaxBinaryHeap {
         while(idx > 0) {
             let parentIdx = Math.floor((idx - 1)/2);
             let parent = this.values[parentIdx];
-            if(element <= parent) break;
+            if(element >= parent) break;
             // swap
             this.values[parentIdx] = element;
             this.values[idx] = parent;
@@ -38,13 +38,13 @@ class MaxBinaryHeap {
         // keep looping and swapping until neither child is larger than element          
     // return popped old root
         extractMax() {
-           const max = this.values[0]; // root
+           const min = this.values[0]; // root
            const end = this.values.pop(); // last element
            if(this.values.length > 0) {
             this.values[0] = end;
             this.sinkDown();
            }           
-           return max;
+           return min;
         }
         sinkDown() {
             let idx = 0;
@@ -58,7 +58,7 @@ class MaxBinaryHeap {
                 // not outbound
                 if(leftChildIdx < length) {
                     leftChild = this.values[leftChildIdx];
-                    if(leftChild > element) {
+                    if(leftChild < element) {
                         swap = leftChildIdx;
                     }
                 }
@@ -68,8 +68,8 @@ class MaxBinaryHeap {
                     if(
                         // if swap not already done and right > element OR
                         // swap done we found left > element but right > left force swap
-                        (swap === null && rightChild > element) || 
-                        (swap !== null && rightChild > leftChild)
+                        (swap === null && rightChild < element) || 
+                        (swap !== null && rightChild < leftChild)
                     ) {
                         swap = rightChildIdx;
                     }

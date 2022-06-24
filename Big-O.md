@@ -1,3 +1,5 @@
+![alt text](https://hackr.io/blog/media/2-24.png)
+
 ## Singly Linked Lists
 
 - Insertion O(1)
@@ -30,3 +32,9 @@
 
 - Insertion O(log n)
 - Searching O(log n)
+
+## Binary Heaps
+
+- Insertion O(log N)
+- Removal O(log N)
+- Searching O(N)

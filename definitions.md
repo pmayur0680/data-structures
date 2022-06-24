@@ -111,3 +111,7 @@ Binary Heaps are used to implement Priority Queues and with graph traversal algo
 ### MaxBinaryHeap v MinBinaryHeap
 
 In a MaxBinaryHeap, parent nodes are always larger than child nodes. In a MinBinaryHeap, parent nodes are always smaller than child nodes.
+
+## Priority Queue
+
+A data structure where each element has a priority associated with it. Elements with highest priority are served before elements with lowest priorities.
