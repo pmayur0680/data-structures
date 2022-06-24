@@ -38,3 +38,9 @@
 - Insertion O(log N)
 - Removal O(log N)
 - Searching O(N)
+
+## Hash Tables
+
+- Insertion O(1)
+- Deletion O(1)
+- Access O(1)

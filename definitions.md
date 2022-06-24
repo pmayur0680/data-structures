@@ -127,3 +127,25 @@ A collision occurs when two keys are hashed to the same index in a hash table.
 Chaining (Separate Chaining) is a technique used for avoiding collisions in hash tables. In the chaining approach, the hash table is an array of linked lists i.e., each index has its own linked list. All key-value pairs mapping to the same index will be stored in the linked list of that index.
 
 Linear probing is another technique for resolving collisions in hash tables, maintaining a collection of key–value pairs and looking up the value associated with a given key. When we find a collision, we search through the array to find the next empty slot.
+
+## Graphs
+
+A Graph is a non-linear data structure consisting of nodes and edges. A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.
+
+A directed graph is a type of graph that contains ordered pairs of vertices while an undirected graph is a type of graph that contains unordered pairs of vertices
+
+If edges in your graph have weights then your graph is said to be a weighted graph, if the edges do not have weights, the graph is said to be unweighted. A weight is a numerical value attached to each individual edge.
+
+Uses: Social Networks, Location/ Mapping, Routing Algorithms
+
+### Adjacency List v Adjacency Matrix
+
+A graph can be represented in mainly two ways:
+
+1. Adjacency List is an array consisting of the address of all the linked lists. The first node of the linked list represents the vertex and the remaining lists connected to this node represents the vertices to which this node is connected.
+2. Adjacency Matrix is a 2D array of size V x V where V is the number of vertices in a graph
+
+#### Comparison
+
+- Adjacency List take up less space and faster to iterate over all edges than Matrix.
+- Adjacency Matrix faster to lookup specific edge than List.
