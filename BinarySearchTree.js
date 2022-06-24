@@ -88,11 +88,28 @@ class BinarySearchTree {
         queue.push(this.root);
         while(queue.length) {
             node = queue.shift();
-            data.push(node);
+            data.push(node.value);
             if(node.left) queue.push(node.left);
             if(node.right) queue.push(node.right);
         }
         return data;
      }   
-  
+    //   Depth-first Search: PreOrder: 1. Visit Node 2. Go to left-subtree 3. Go to right-subtree
+    //      Create a variable to store values of node visited
+    //      Write a helper function which accepts a node    
+    //          1. push the value of the node into the variable that stores the nodes
+    //          2 if there is left on the node, call helper function with left property of node
+    //          3 if there is right on the node, call helper function with right property of node
+    //     Invoke helper function with the root
+    //     Return the variable that stores the values
+    DFSPreOrder() {
+        var data = [];        
+        function traverse(node) {
+            data.push(node.value);
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+        }
+        traverse(this.root);
+        return data;
+    }
 }
