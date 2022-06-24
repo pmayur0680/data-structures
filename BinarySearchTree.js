@@ -71,5 +71,28 @@ class BinarySearchTree {
             }false
             return current;
         }
+    //   Breadth-first Search  
+    //      Create an empty queue (array) and a variable to store values of node visited
+    //      Place root node in the queue
+    //      Loop as long as there is anything in the queue
+    //          1. Dequeue a node from the queue and push the value of the node into the 
+    //             variable that stores the nodes
+    //          2 if there is left on the node dequeued, add it to queue
+    //          3 if there is right on the node dequeued, add it to queue
+    //     Return the variable that stores the values
+                
+     BFS() {
+        var node = this.root,
+            data = [],
+            queue = [];
+        queue.push(this.root);
+        while(queue.length) {
+            node = queue.shift();
+            data.push(node);
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
+        }
+        return data;
+     }   
   
 }

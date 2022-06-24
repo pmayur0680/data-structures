@@ -39,17 +39,54 @@ element inserted at the first, is the first element to come out of the list.
 
 Tree is a nonlinear data structure consisting of nodes in a parent/child relationship.
 
-- Root is a top node in a tree.
-- Child is a node directory connected to another node when moving away from the Root.
-- Parent - The converse notion of a child.
+- Root: The top node in a tree, the prime ancestor.
+- Child: A node directly connected to another node when moving away from the root, an immediate descendant.
+- Parent: The converse notion of a child, an immediate ancestor.
 - Siblings - A group of nodes with the same parent.
-- Leaf - A node with no children.
-- Edge - The connection between one node and another.
+- Leaf: A node with no children.
+- Edge: The connection between one node and another.
 
 Example: HTML DOM, Network Routing, Abstract Syntax Tree, Artificial Inteligence, Files & Directory Structure
 
 ### Types of Trees
 
 - Trees: Each node can have any number of child nodes.
-- Binary Trees: Each node can have at most two child nodes.
-- Binary Search Trees (BST): Each parent node can have at most two children. Every node to the left of a parent is always less than the parent. Every node to the right of a parent is always greater than the parent.
+- Binary Trees: is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.
+- Binary Search Trees (BST): is a special type of binary tree which has the following properties.
+  - Each parent node can have at most two children.
+  - Every node to the left of a parent is always less than the parent.
+  - Every node to the right of a parent is always greater than the parent.
+
+### Tree Traversal
+
+Tree Traversal Algorithms can be classified in the following two categories by the order in which the nodes are visited:
+
+- Breadth-first Search Algorithm: It starts at the root of the tree or graph and investigates all nodes at the current depth level before moving on to nodes at the next depth level.
+
+![alt text](https://miro.medium.com/max/1000/1*2NIfAdSadsdK2rP015f6Xg.gif)
+
+- Depth-First Search (DFS) Algorithm: It starts with the root node and first visits all nodes of one branch as deep as possible of the chosen Node and before backtracking, it visits all other branches in a similar fashion. There are three sub-types: InOrder, PreOrder, PostOrder.
+
+### InOrder Traversal
+
+- Go to left-subtree
+- Visit Node
+- Go to right-subtree
+
+![alt text](https://miro.medium.com/max/1000/1*bxQlukgMC9cGv_MFUllX2Q.gif)
+
+### Preorder Traversal
+
+- Visit Node
+- Go to left-subtree
+- Go to right-subtree
+
+![alt text](https://miro.medium.com/max/1000/1*UGoV21qO6N8JED-ozsbXWw.gif)
+
+### Postorder Traversal
+
+- Go to left-subtree
+- Go to right-subtree
+- Visit Node
+
+![alt text](https://miro.medium.com/max/1000/1*UGrzA4qtLCaaCiNAKZyj_w.gif)
