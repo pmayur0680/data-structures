@@ -149,3 +149,9 @@ A graph can be represented in mainly two ways:
 
 - Adjacency List take up less space and faster to iterate over all edges than Matrix.
 - Adjacency Matrix faster to lookup specific edge than List.
+
+## Graph Traversal
+
+Useful in finding closest match, shortest path, peer to peer networking.
+
+- Depth First: Explore as far as possible down one branch before backtracking

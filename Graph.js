@@ -36,4 +36,31 @@ class Graph {
         }        
         delete this.adjacencyList[vertex];
     }
+    // Recursive DFS
+    // Accept a starting node
+    // Create empty array to store the end result, return at end
+    // Create an object to store visited vertices
+    // Create helper function which accepts a vertex
+        // return if vertex is empty
+        // place vertex in visted object and push into result array
+        // loop over all values in list for that vertex
+        // if any on that values not been visited, recursively invoke helper function with that vertex
+    // invoke helper function with starting vertex
+    // Return the resul array
+    dfsRecursive(start) {
+        const result = [], visited = {};
+        const adjacencyList = this.adjacencyList;
+        (function dfs(vertex) {
+            if(!vertex) return null;
+            visited[vertex] = true;
+            result.push(vertex);
+            adjacencyList[vertex].forEach(neighbour => {
+                if(!visited[neighbour]) {
+                    return dfs(neighbour);
+                }
+            });
+            
+        })(start);
+        return result;
+    }
 }
