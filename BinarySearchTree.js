@@ -112,4 +112,22 @@ class BinarySearchTree {
         traverse(this.root);
         return data;
     }
+    //   Depth-first Search: PostOrder: 1. Go to left-subtree 2. Go to right-subtree 3. Visit Node
+    //      Create a variable to store values of node visited
+    //      Write a helper function which accepts a node    
+    //          1 if there is left on the node, call helper function with left property of node
+    //          2 if there is right on the node, call helper function with right property of node
+    //          3. push the value of the node into the variable that stores the nodes    
+    //     Invoke helper function with the root
+    //     Return the variable that stores the values
+    DFSPostOrder() {
+        var data = [];        
+        function traverse(node) {
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+            data.push(node.value);
+        }
+        traverse(this.root);
+        return data;
+    }
 }
