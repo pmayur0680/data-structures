@@ -90,3 +90,24 @@ Tree Traversal Algorithms can be classified in the following two categories by t
 - Visit Node
 
 ![alt text](https://miro.medium.com/max/1000/1*UGrzA4qtLCaaCiNAKZyj_w.gif)
+
+### BFS v DFS
+
+Time complexity is same for BFS and DFS.
+If it's really wide tree breadth first could store or take up a lot more space for queue. If it's really deep long tree then depth first could end up taking up more space.
+
+## Binary Heaps
+
+Binary Heap is a data structure that takes the form of a binary tree with two additional constraints:
+
+- all levels of the tree except last one are fully filled, nodes of the level are filled from left to right.
+- the key stored in each node is >= or <= the key's in node's children.
+
+Mathematically, for any index of array n.. The left child is stored at 2n + 1 and right child at 2n + 2.
+to get parent from child, for any child node at index n..Its parent is at index floor((n-1)/2).
+
+Binary Heaps are used to implement Priority Queues and with graph traversal algorithms.
+
+### MaxBinaryHeap v MinBinaryHeap
+
+In a MaxBinaryHeap, parent nodes are always larger than child nodes. In a MinBinaryHeap, parent nodes are always smaller than child nodes.
