@@ -115,3 +115,15 @@ In a MaxBinaryHeap, parent nodes are always larger than child nodes. In a MinBin
 ## Priority Queue
 
 A data structure where each element has a priority associated with it. Elements with highest priority are served before elements with lowest priorities.
+
+## Hash Tables
+
+A data structure that implements a set abstract data type, a structure that can map keys to values.
+
+### Collisions
+
+A collision occurs when two keys are hashed to the same index in a hash table.
+
+Chaining (Separate Chaining) is a technique used for avoiding collisions in hash tables. In the chaining approach, the hash table is an array of linked lists i.e., each index has its own linked list. All key-value pairs mapping to the same index will be stored in the linked list of that index.
+
+Linear probing is another technique for resolving collisions in hash tables, maintaining a collection of key–value pairs and looking up the value associated with a given key. When we find a collision, we search through the array to find the next empty slot.
