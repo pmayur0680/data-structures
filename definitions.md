@@ -159,5 +159,4 @@ Useful in finding closest match, shortest path, peer to peer networking.
 
 ## Dijkstra's Algorithm
 
-Find the shortest path between two vertices on a graph.
-useful in GPS (finding fastest route), Network Routing, Airline Tickets (Finding cheapest route), Biology (model the spread of virus among humans)
+Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a graph. Useful in GPS (finding fastest route), Network Routing, Airline Tickets (Finding cheapest route), Biology (model the spread of virus among humans)
