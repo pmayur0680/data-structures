@@ -94,4 +94,52 @@ class Graph {
         }
         return result;
     }
+    // Breadth First
+    // Accept stating vertex
+    // Create a queue and place starting vertex in it
+    // Create an array to store node visited
+    // Create an object to store node visited
+    // Mark the starting vertex visited
+    // Loop as long as there is in queue
+       // Remove first vertex from queue and push into array that stores node visited
+       // Loop over each vertex in list for the vertex you are visiting
+       // if not visited, mark as visited in object and enqueue that vertex
+    // return array of node visited
+    breadthFirst(start) {
+        const queue = [start];
+        const result = [], visited = {};
+        let currentVertex;
+        visited[start] = true;
+        while(queue.length) {
+            currentVertex = queue.shift();
+            result.push(currentVertex);
+            // for right to left this.adjacencyList[currentVertex].slice().reverse().forEach(neighbor => {
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            })
+        }
+        return result;
+    }   
 }
+
+let g = new Graph();
+
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
+
+
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B","D")
+g.addEdge("C","E")
+g.addEdge("D","E")
+g.addEdge("D","F")
+g.addEdge("E","F")
+console.log(g.depthFirstIterative("A"));
