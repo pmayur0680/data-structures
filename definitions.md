@@ -154,4 +154,10 @@ A graph can be represented in mainly two ways:
 
 Useful in finding closest match, shortest path, peer to peer networking.
 
-- Depth First: Explore as far as possible down one branch before backtracking
+- Depth First
+- Breadth first
+
+## Dijkstra's Algorithm
+
+Find the shortest path between two vertices on a graph.
+useful in GPS (finding fastest route), Network Routing, Airline Tickets (Finding cheapest route), Biology (model the spread of virus among humans)
