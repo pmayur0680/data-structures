@@ -178,6 +178,35 @@ class SinglyLinkedList {
         }
         return this;
      }
+     // 1 -> 2 -> 3 -> 4 -> 5
+     // k = 2 will rotate to 3 -> 4 -> 5 -> 1 -> 2
+     // k = -2 will roate to 4 -> 5 -> 1 -> 2 -> 3
+     rotate(k) {       
+        // if k out of index, return
+        // loop through to find kth node, k+1 node, and last node
+        // for k > 0, it will be kth node
+        // for k < 0 it will be length + k
+        // set last node to next = old head, head = kth node next, tail = kth node, kth node next = null
+        // return list
+        if(Math.abs(k) > this.length) return undefined;
+        if(k === 0) return this;
+        var current = this.head;
+        var currentHead = current;
+        var counter = 1;
+        let kthNode, lastNode;
+        while(current.next) {            
+            if(k > 0 && k === counter) kthNode = current;
+            if(k < 0 && this.length + k === counter) kthNode = current;
+            current = current.next;            
+            counter++;        
+        }                
+        lastNode = current;
+        lastNode.next = currentHead;
+        this.head = kthNode.next;
+        this.tail = kthNode;
+        kthNode.next = null;    
+        return this;
+    }
      // helper to see action in array
      print() {
         var arr = [];
