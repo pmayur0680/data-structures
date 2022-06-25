@@ -47,20 +47,51 @@ class Graph {
         // if any on that values not been visited, recursively invoke helper function with that vertex
     // invoke helper function with starting vertex
     // Return the resul array
-    dfsRecursive(start) {
+    depthFirstRecursive(start) {
         const result = [], visited = {};
         const adjacencyList = this.adjacencyList;
         (function dfs(vertex) {
             if(!vertex) return null;
             visited[vertex] = true;
             result.push(vertex);
-            adjacencyList[vertex].forEach(neighbour => {
-                if(!visited[neighbour]) {
-                    return dfs(neighbour);
+            adjacencyList[vertex].forEach(neighbor => {
+                if(!visited[neighbor]) {
+                    return dfs(neighbor);
                 }
             });
             
         })(start);
+        return result;
+    }
+    // Iterative DFS
+    // Accept a starting node
+    // Create empty array (stack) to help use keep track of vertices
+    // Create empty array to store the end result, return at end
+    // Create an object to store visited vertices
+    // After starting vertex to the stack, mark it visited
+    // While the stack has something in it
+        // pop the next vertex from the stack
+        // if the vertex hasn't been visited yet
+            // mark it as visited
+            // add it to the result list
+            // push all neighbors into the stack
+    // Return the resul array
+    depthFirstIterative(start) {
+        const result = [], visited = {};
+        const stack = [start];
+        let currentVertex;
+        visited[start] = true;
+        while(stack.length) {
+            currentVertex = stack.pop();
+            result.push(currentVertex);
+
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    stack.push(neighbor);
+                }
+            })
+        }
         return result;
     }
 }
