@@ -56,21 +56,22 @@ class BinarySearchTree {
     // else if value of new node < root, check to see if there is a node to left
             // if there is, move to that node and repeat steps
             // if not, add that node as the left    
-    find(value) {
+    find(value){
         if(this.root === null) return false;
-        var current = this.root;
-        var found = false;
-        while(current && !found) {
-            if(value < current.value) {                
-                current = current.left;                
-            } else if(value > current.value) {                
-                current = current.right;                    
+        var current = this.root,
+            found = false;
+        while(current && !found){
+            if(value < current.value){
+                current = current.left;
+            } else if(value > current.value){
+                current = current.right;
             } else {
-                return true;
+                found = true;
             }
-            }false
-            return current;
         }
+        if(!found) return undefined;
+        return current;
+    }
     //   Breadth-first Search  
     //      Create an empty queue (array) and a variable to store values of node visited
     //      Place root node in the queue

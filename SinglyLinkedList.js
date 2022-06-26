@@ -195,7 +195,12 @@ class SinglyLinkedList {
         var counter = 1;
         let kthNode, lastNode;
         while(current.next) {            
+            // rotate left 3 -> 4 -> 5 -> 1 -> 2
             if(k > 0 && k === counter) kthNode = current;
+            // rotate right for k 4 -> 5 -> 1 -> 2 -> 3
+            // k = length - k, on top
+            // if length not given
+            // rotate right for negative 4 -> 5 -> 1 -> 2 -> 3
             if(k < 0 && this.length + k === counter) kthNode = current;
             current = current.next;            
             counter++;        
