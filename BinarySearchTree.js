@@ -149,4 +149,12 @@ class BinarySearchTree {
         traverse(this.root);
         return data;    
     }
+    // 1] If no children - Just delete.
+   // 2] If a single child - Copy that child to the node.
+   // 3]If two children - Determine the next highest element (inorder successor) in the right subtree.
+   // Replace the node to be removed with the inorder successor. Delete the inorder successor duplicate.
+
+    removeNode(value, root = this.root, left, right) {       
+        
+    }
 }

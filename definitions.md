@@ -160,3 +160,23 @@ Useful in finding closest match, shortest path, peer to peer networking.
 ## Dijkstra's Algorithm
 
 Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a graph. Useful in GPS (finding fastest route), Network Routing, Airline Tickets (Finding cheapest route), Biology (model the spread of virus among humans)
+
+## Dynamic Programming
+
+Dynamic Programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just at once, and storing their solutions.
+
+Dynamic Programming is an optimization over plain recursion. The idea is to simply store the results of subproblems, so that we do not have to re-compute them when needed later.
+
+Dynamic Programming can be use for problems with optimal substructure & overlapping subproblems.
+
+### Overlapping subproblems
+
+if problem can be break down into subproblems which are reused several times.
+
+### Optimum substructure
+
+if an optimal solution can be constructed from optimal solutions of its subproblems.
+
+### Memoization
+
+Storing the result of expensive function calls and returing the cached result where the same input occur again.
